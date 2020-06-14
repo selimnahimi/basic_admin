@@ -64,8 +64,8 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        #$roles = $this->get('security.role_hierarchy');
-        return array('ROLE_ADMIN');
+        # We have multiple roles so return them in an array.
+        return explode(';', $this->role);
     }
 
     public function setType(int $type): self
@@ -74,15 +74,6 @@ class User implements UserInterface
 
         return $this;
     }
-
-    #public function getRoles(): array
-    #{
-    #    $roles = $this->type->toArray();
-    #    foreach($roles as $k => $v) {
-    #        $roles[$k] = $v->getRole();
-    #    }
-    #    return $roles;
-    #}
 
     public function getSalt()
     {
