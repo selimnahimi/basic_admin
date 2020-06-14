@@ -33,6 +33,11 @@ class User implements UserInterface
      */
     private $role;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $lastLogin;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -62,15 +67,27 @@ class User implements UserInterface
         return $this;
     }
 
+    public function getLastLogin()
+    {
+        return $this->lastLogin;
+    }
+
+    public function setLastLogin($date)
+    {
+        $this->lastLogin = $date;
+
+        return $this;
+    }
+
     public function getRoles()
     {
         # We have multiple roles so return them in an array.
         return explode(';', $this->role);
     }
 
-    public function setType(int $type): self
+    public function setRole(string $role): self
     {
-        $this->type = $type;
+        $this->role = $role;
 
         return $this;
     }

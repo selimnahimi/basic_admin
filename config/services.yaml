@@ -28,6 +28,10 @@ services:
         arguments:
             - '%env(DATABASE_URL)%'
             - { db_table: 'user_sessions'}
+    
+    App\EventListener\LoginListener:
+        tags:
+            - { name: 'kernel.event_listener', event: 'security.interactive_login' }
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
