@@ -32,3 +32,6 @@ A weboldal ezek után a http://localhost:8000/ címen lesz elérhető.
 | User 1         | user1  |
 | User 2         | user2  |
 | User 3         | user3  |
+
+## Külső könyvtárak:
+- CaptchaBundle: https://github.com/Gregwar/CaptchaBundle
