@@ -14,7 +14,7 @@
 #### php bin/console doctrine:migrations:migrate
 Ezzel az adatbázis a megfelelő táblákkal lesz ellátva.
 
-Ezután importáljuk az "IMPORT_USER_DATA.sql" fájlt.
+Ezután importáljuk az "IMPORT_USER_DATA.sql" fájlt az adatbázisunkba.
 
 ## Futtatás:
 1. yarn install
