@@ -23,3 +23,11 @@ Ezután importáljuk az "IMPORT_USER_DATA.sql" fájlt az adatbázisunkba.
 4. symfony server:start
 
 A weboldal ezek után a http://localhost:8000/ címen lesz elérhető.
+
+## Felhasználók:
+| Felhasználónév | Jelszó |
+|----------------|--------|
+| Admin          | admin  |
+| User 1         | user1  |
+| User 2         | user2  |
+| User 3         | user3  |
