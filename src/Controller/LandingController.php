@@ -30,16 +30,26 @@ class LandingController extends AbstractController
     /**
      * @Route("/", name="landing")
     */
-    public function number(): Response
+    public function display(): Response
     {
         $user = $this->security->getUser();
+        
+        $userName = $user->getUsername();
         $userRoles = implode(",", $user->getRoles());
+        $userLastLogin = $user->getLastLogin();
+
+        #$entityManager = $this->getDoctrine()->getManager();
+        #$repository = $entityManager->getRepository('App:User');
+        #$users = $repository->findAll();
+
         #$user->setUsername("test");
         #$entityManager = $this->getDoctrine()->getManager();
         #$entityManager->flush();
         
         return $this->render('landing.html.twig', [
+            'username' => $userName,
             'roles' => $userRoles,
+            'lastlogin' => $userLastLogin,
         ]);
     }
 

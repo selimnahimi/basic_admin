@@ -1,8 +1,27 @@
-<head>
-    <link rel="stylesheet" href="{{ asset('build/app.css') }}" />
-</head>
+{% include 'head.html.twig' %}
 
 <body>
-    <h1>Welcome!</h1>
-    <h4>Your roles: {{ roles }}</h4>
+    {% include 'navbar.html.twig' %}
+    <h1>Üdvözöljük!</h1>
+    <hr>
+    <h4>Felhasználó adatai:</h4>
+    <table class="table" id="userTable">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Felhasználónév</th>
+                <th scope="col">Jogosultságok</th>
+                <th scope="col">Utolsó belépés időpontja</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{username}}</td>
+                <td>{{roles}}</td>
+                <td>{{lastlogin|sanitize}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% if is_granted('ROLE_ADMIN') %}
+    {% endif %}
 </body>

@@ -7,6 +7,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use App\Http\Requests;
 
+use Gregwar\CaptchaBundle\Type\CaptchaType;
+
 class SecurityController extends AbstractController
 {
     /**
